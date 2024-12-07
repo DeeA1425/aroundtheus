@@ -1,0 +1,15 @@
+.header {
+  min-height: 120px;
+  font-family: "Inter", Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+  flex-shrink: 0;
+}
+
+.header__logo {
+  width: 173px;
+  height: 33px;
+  object-fit: contain;
+  margin-top: 45px;
+}
