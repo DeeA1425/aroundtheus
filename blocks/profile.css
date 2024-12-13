@@ -87,6 +87,7 @@
     .profile {
       flex-direction: column;
       margin-bottom: 36px;
+      margin: 126px 19px 0 19px;
     }
     .profile__info {
       display: flex;
