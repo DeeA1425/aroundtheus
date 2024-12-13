@@ -14,3 +14,10 @@
   object-fit: contain;
   margin-top: 45px;
 }
+
+@media screen and (max-width: 480px) {
+  .header__logo {
+    width: 126px;
+    height: 24px;
+  }
+}
