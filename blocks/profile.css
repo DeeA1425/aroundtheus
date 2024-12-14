@@ -96,6 +96,8 @@
       justify-content: center;
       padding-right: 62px;
       padding-left: 62px;
+      width: 282px;
+      height: 50px;
     }
     .profile__description {
       width: 100%;
