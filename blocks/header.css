@@ -12,17 +12,16 @@
   width: 173px;
   height: 33px;
   object-fit: contain;
-  margin-top: 45px;
 }
 
 @media screen and (max-width: 480px) {
   .header{
-    width: 100%;
-    border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+    min-height: 85px;
   }
+
   .header__logo {
     width: 126px;
     height: 24px;
-    margin: 28px 167px 0 27px;
+    margin: 0 0 0 27px;
   }
 }

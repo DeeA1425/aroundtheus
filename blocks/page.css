@@ -22,8 +22,8 @@
   font-family: "Inter", arial, sans-serif;
 }
 
-@media screen and(max-width: 621px) {
-  .page-content {
+@media screen and (max-width: 621px) {
+  .page__content {
     padding: 0;
   }
 }
