@@ -18,8 +18,11 @@ This project is made so all the elements are displayed correctly on popular scre
   
 The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
 
+Desktop (1280px)
 ![alt text](./images/Desktop.jpeg)
+Tablet (800px)
 ![alt text](./images/Tablet.jpeg)
+Mobile (320px)
 ![alt text](./images/Mobile.jpeg)
 
 Good luck and have fun!
