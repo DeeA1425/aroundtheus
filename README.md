@@ -10,11 +10,14 @@
   
 This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.  
 
- ### Technology
+ ### Technologies Used
  * HTML
+ * Semantic HTML
  * CSS
  * Flexbox
  * Media Queries
+ * Flat BEM structure file
+
 
 **Figma**  
   
