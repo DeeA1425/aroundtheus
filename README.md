@@ -38,3 +38,7 @@ Tablet (800px)
 Moblie (320px)
 
 Good luck and have fun!
+
+**Video**
+
+https://drive.google.com/file/d/1pSWnKEOWGukwBcabhpBMXCnTNbGSDBSv/view?usp=drive_link
