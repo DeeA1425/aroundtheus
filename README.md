@@ -41,4 +41,8 @@ Good luck and have fun!
 
 **Video**
 
-https://drive.google.com/file/d/1pSWnKEOWGukwBcabhpBMXCnTNbGSDBSv/view?usp=drive_link
+https://drive.google.com/file/d/1pSWnKEOWGukwBcabhpBMXCnTNbGSDBSv/view?usp=sharing
+
+**Website**
+
+https://deea1425.github.io/aroundtheus_2/
