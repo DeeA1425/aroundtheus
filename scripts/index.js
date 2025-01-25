@@ -30,4 +30,9 @@ link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/ar
 },
 ];
 
+const profileEditButton = document.querySelector("#profile_edit-button");
+profileEditButton.addEventListener("click", () => {
+console.log("button clicks");
+});
+
 console.log(initialCards);
