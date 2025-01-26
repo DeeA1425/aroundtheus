@@ -22,7 +22,6 @@
   padding: 36px;
   border-radius: 10px;
   width: 430px;
-  height: 330px;
   position: relative;
 }
 
@@ -38,6 +37,7 @@
 .modal__form {
   display: flex;
   flex-direction: column;
+  gap: 29px;
 }
 
 .modal__close {
@@ -54,8 +54,13 @@
   background-size: contain;
 }
 
+.modal__input {
+    height: 27px
+}
+
 .modal__button {
   width: 100%;
   background-color: #000;
   color: #fff;
+  height: 50px;
 }

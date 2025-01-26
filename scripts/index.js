@@ -38,4 +38,11 @@ profileEditButton.classList.add("modal__opened");
 console.log("button clicks");
 });
 
+const closeButton = document.querySelector("#modal__close");
+
+closeButton.addEventListener("click", function() {
+  const modal = document.querySelector("#modal"); 
+  modal.style.display = 'none'; 
+});
+
 console.log(initialCards);
