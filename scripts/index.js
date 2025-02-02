@@ -36,14 +36,13 @@ const profileEditCloseButton = profileEditModal.querySelector(".close__modal")
 
 profileEditButton.addEventListener("click", () => {
 profileEditModal.classList.add("modal__opened");  
-console.log("button clicks");
 });
 
 const closeButton = profileEditModal.querySelector("modal__close");
 
-closeButton.addEventListener("click", function() {
-  const modal = document.querySelector("profile-edit-modal"); 
-  modal.style.display = 'none'; 
+closeButton.addEventListener("click", () => {
+const profileEditModal = classList.remove("modal__opened"); 
+
 });
 
 console.log(initialCards);
