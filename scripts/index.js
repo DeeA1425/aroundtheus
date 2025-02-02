@@ -32,16 +32,17 @@ const initialCards = [
 
 const profileEditButton = document.querySelector("#profile-edit-button");
 const profileEditModal = document.querySelector("#profile-edit-modal");
+const profileEditCloseButton = profileEditModal.querySelector(".close__modal")
 
 profileEditButton.addEventListener("click", () => {
-profileEditButton.classList.add("modal__opened");  
+profileEditModal.classList.add("modal__opened");  
 console.log("button clicks");
 });
 
-const closeButton = document.querySelector("#modal__close");
+const closeButton = profileEditModal.querySelector("modal__close");
 
 closeButton.addEventListener("click", function() {
-  const modal = document.querySelector("#modal"); 
+  const modal = document.querySelector("profile-edit-modal"); 
   modal.style.display = 'none'; 
 });
 
