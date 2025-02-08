@@ -32,7 +32,6 @@
   line-height: 29px;
   font-weight: 900;
   color: #000;
-  
 }
 
 .modal__form {
@@ -57,11 +56,11 @@
 }
 
 .modal__close:hover {
-opacity: 0.6;
+  opacity: 0.6;
 }
 
 .modal__input {
-    height: 27px
+  height: 27px;
 }
 
 .modal__button {
@@ -69,12 +68,31 @@ opacity: 0.6;
   background-color: #000;
   color: #fff;
   height: 50px;
-  
 }
 
-@media screen and (min-width: 320px) {
+@media screen and (max-width: 320px) {
+  .modal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
   .modal__close {
+    width: 26px;
+    height: 26px;
     margin: 0;
   }
 }
 
+.modal__heading {
+  width: 238;
+  height: 22px;
+  font: 18px;
+  font-weight: 900;
+}
+
+.modal__button {
+  height: 46px;
+  font: 14px;
+  font-weight: 400;
+}
