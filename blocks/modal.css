@@ -32,6 +32,7 @@
   line-height: 29px;
   font-weight: 900;
   color: #000;
+  
 }
 
 .modal__form {
@@ -68,6 +69,7 @@ opacity: 0.6;
   background-color: #000;
   color: #fff;
   height: 50px;
+  
 }
 
 @media screen and (min-width: 320px) {
@@ -75,3 +77,4 @@ opacity: 0.6;
     margin: 0;
   }
 }
+
