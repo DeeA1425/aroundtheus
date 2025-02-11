@@ -78,6 +78,7 @@
   }
   
   .modal__close {
+    margin: -19px 50px;
     width: 26px;
     height: 26px;
     margin: 0;
