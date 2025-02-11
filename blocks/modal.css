@@ -70,16 +70,21 @@
   height: 50px;
 }
 
-@media screen and (max-width: 320px) {
-  .modal{
+@media screen and (max-width: 620px) {
+  .modal {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  
+  .modal__container {
+    width: 282px;
+    height: 322px;
+    top: -320px;
+  }
+
   .modal__close {
-    position: relative;
-    margin: -19px 50px;
+    top: -40px;
+    right: 0px;
     width: 26px;
     height: 26px;
     margin: 0;
