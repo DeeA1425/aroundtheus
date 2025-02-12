@@ -71,35 +71,40 @@
 }
 
 @media screen and (max-width: 620px) {
-  .modal {
+
+  .modal_opened{
     display: flex;
-    align-items: center;
-    justify-content: center;
   }
+
   .modal__container {
     width: 282px;
-    height: 322px;
-    top: -320px;
+    max-width: calc(100% - 19px * 2);
+    margin-top: 8px;
+    padding: 25px 22px;
+  }
+
+  .modal__heading {
+    width: 238px;
+    height: 22px;
+    font-size: 29px;
+    font-weight: 900;
+  }
+
+  .modal__form{
+    margin-top: 53px;
   }
 
   .modal__close {
-    top: -40px;
-    right: 0px;
-    width: 26px;
-    height: 26px;
-    margin: 0;
+   right: 7px;
+   top: -42px;
+   width: 20px;
+   height: 20px;
   }
-}
 
-.modal__heading {
-  width: 238;
-  height: 22px;
-  font: 18px;
-  font-weight: 900;
-}
-
-.modal__button {
-  height: 46px;
-  font: 14px;
-  font-weight: 400;
+  .modal__button {
+    font-size: 14px;
+    line-height: 17px;
+    margin-top: 46px;
+    height: 46px;
+  }
 }
