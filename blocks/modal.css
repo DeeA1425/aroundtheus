@@ -91,7 +91,7 @@
     height: 22px;
     font-size: 29px;
     font-weight: 900;
-    padding-bottom: 75px;
+    margin: 29px 0 75px;
   }
 
   .modal__form{
@@ -108,7 +108,7 @@
   .modal__button {
     font-size: 14px;
     line-height: 17px;
-    margin-top: 46px;
+    margin-top: 45px;
     height: 46px;
   }
 }
