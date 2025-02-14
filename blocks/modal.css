@@ -61,9 +61,8 @@
 
 .modal__input {
   height: 27px;
-  border: 1px;
-  border-color: #000;
-  
+  border: none;
+  border-bottom: 1px solid black;
 }
 
 .modal__button {
@@ -89,9 +88,9 @@
   .modal__heading {
     width: 238px;
     height: 22px;
-    font-size: 29px;
+    font-size: 18px;
     font-weight: 900;
-    margin: 29px 0 75px;
+    margin: 17px 0 75px;
   }
 
   .modal__form{
