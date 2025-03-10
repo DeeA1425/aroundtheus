@@ -77,7 +77,14 @@ function handleProfileEditSubmit(e) {
   e.preventDefault();
   profileTitle.textContent = profileTitleInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
-  closePopup();
+  closePopup(editProfileModal);
+}
+
+function handleProfileEditSubmit(e) {
+  e.preventDefault();
+  
+
+  closePopup(editProfileModal);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -94,6 +101,7 @@ profileEditCloseButton.addEventListener("click", closePopup);
 profileForm.addEventListener("submit", handleProfileEditSubmit);
 
 initialCards.forEach((cardData) => {
+  console.log(cardData);
   const cardElement = getCardElement(cardData);
   cardListEl.prepend(cardElement);
 });
