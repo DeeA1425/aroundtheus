@@ -42,6 +42,9 @@ const profileDescriptionInput = document.querySelector(
   "#profile__description-input"
 );
 
+const profileAddButton = document.querySelector(".profile_add-button");
+console.log(".profile_add-button");
+
 const profileForm = document.forms["profile-form"];
 const cardListEl = document.querySelector(".cards__list");
 const cardTemplate =
@@ -80,11 +83,10 @@ function handleProfileEditSubmit(e) {
   closePopup(editProfileModal);
 }
 
-function handleProfileEditSubmit(e) {
+function handleAddCardFormSubmit(e) {
   e.preventDefault();
-  
-
-  closePopup(editProfileModal);
+  const cardElement = getCardElement();
+  closePopup(addCardModal);
 }
 
 /* -------------------------------------------------------------------------- */
