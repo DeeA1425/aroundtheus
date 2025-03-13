@@ -52,7 +52,7 @@ const cardTemplate =
 /* -------------------------------------------------------------------------- */
 /*                                  Functions                                 */
 /* -------------------------------------------------------------------------- */
-function closePopup() {
+function closePopup(modal) {
   profileEditModal.classList.remove("modal_opened");
 }
 
@@ -85,7 +85,7 @@ function handleProfileEditSubmit(e) {
 function handleAddCardFormSubmit(e) {
   e.preventDefault();
   const cardElement = getCardElement();
-  closePopup(profileAddButton);
+  closePopup(addCardModal);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -105,4 +105,10 @@ initialCards.forEach((cardData) => {
   console.log(cardData);
   const cardElement = getCardElement(cardData);
   cardListEl.prepend(cardElement);
+});
+
+profileAddButton.addEventListener("click", () => {
+  profileTitleInput.value = profileTitleInput.textContent;
+  profileDescription.value = profileDescriptionInput.textContent;
+  addCardModal.classList.add("modal_opened");
 });
