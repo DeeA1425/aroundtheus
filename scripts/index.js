@@ -43,11 +43,20 @@ const profileDescriptionInput = document.querySelector(
 );
 
 const profileAddButton = document.querySelector(".profile__add-button");
+const profileFormElement = profileEditModal.querySelector(".modal__form");
+
+const addCardModal = document.querySelector("#profile-add-modal");
+const addCardFormElement = addCardModal.querySelector(".modal__form");
 
 const profileForm = document.forms["profile-form"];
 const cardListEl = document.querySelector(".cards__list");
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
+
+/* -------------------------------------------------------------------------- */
+/*                                 Form Data                                  */
+/* -------------------------------------------------------------------------- */
+
 
 /* -------------------------------------------------------------------------- */
 /*                                  Functions                                 */
