@@ -40,6 +40,11 @@
   cursor: auto;
   cursor: pointer;
 }
+
+.card__like-button_active {
+
+}
+
 .card__like-button:hover {
     opacity: 0.5;
     cursor: pointer;

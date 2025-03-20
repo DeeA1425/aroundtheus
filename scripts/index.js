@@ -88,7 +88,7 @@ function renderCard(cardData) {
  const cardElement = getCardElement(cardData);
  cardsWrap.prepend(cardElement);
 }
-const likeButtons = document.querySelector()
+
 /* -------------------------------------------------------------------------- */
 /*                                Event Handler                               */
 /* -------------------------------------------------------------------------- */
@@ -125,7 +125,7 @@ profileEditButton.addEventListener("click", () => {
 
 profileEditCloseButton.addEventListener("click", closePopup);
 
-profileForm.addEventListener("submit", handleProfileEditSubmit);
+profileForm.addEventListener("submit", handleProfileFormSubmit);
 
 initialCards.forEach((cardData) => {
   console.log(cardData);
@@ -141,3 +141,13 @@ profileAddButton.addEventListener("click", () => {
 
 profileFormElement.addEventListener("submit", handleProfileFormSubmit);
 addCardFormElement.addEventListener("submit", handleAddCardFormSubmit);
+
+
+initialCards.forEach((cardData) = renderCard(cardData, cardsWrap));
+
+const likeButtons = document.querySelectorAll(".card__like-button")
+likeButtons.forEach(likeButtons => {
+  likeButtons.addEventListener("click", () => {
+    console.log('click');
+  });
+});
