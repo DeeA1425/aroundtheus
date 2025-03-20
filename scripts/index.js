@@ -56,7 +56,10 @@ const cardTemplate =
 /* -------------------------------------------------------------------------- */
 /*                                 Form Data                                  */
 /* -------------------------------------------------------------------------- */
-
+const cardTitleInput = addCardFormElement.querySelector(
+  ".modal__input_type_title"
+);
+const cardUrlInput = addCardFormElement.querySelector(".modal__input_type_url");
 
 /* -------------------------------------------------------------------------- */
 /*                                  Functions                                 */
@@ -81,10 +84,15 @@ function getCardElement(cardData) {
   return cardElement;
 }
 
+function renderCard(cardData) {
+ const cardElement = getCardElement(cardData);
+ cardsWrap.prepend(cardElement);
+}
+const likeButtons = document.querySelector()
 /* -------------------------------------------------------------------------- */
 /*                                Event Handler                               */
 /* -------------------------------------------------------------------------- */
-function handleProfileEditSubmit(e) {
+function handleProfileFormSubmit(e) {
   e.preventDefault();
   profileTitle.textContent = profileTitleInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
@@ -93,7 +101,16 @@ function handleProfileEditSubmit(e) {
 
 function handleAddCardFormSubmit(e) {
   e.preventDefault();
-  const cardElement = getCardElement();
+  const name = cardTitleInput.value;
+  const link = cardUrlInput.value;
+  const cardElement = getCardElement({
+    name, 
+    link,
+  });
+  cardsWrap.prepend(cardElement);
+  closeModal(addCardModal);
+
+  return console.log(cardElement)
   closePopup(addCardModal);
 }
 
@@ -121,3 +138,6 @@ profileAddButton.addEventListener("click", () => {
   profileDescription.value = profileDescriptionInput.textContent;
   addCardModal.classList.add("modal_opened");
 });
+
+profileFormElement.addEventListener("submit", handleProfileFormSubmit);
+addCardFormElement.addEventListener("submit", handleAddCardFormSubmit);
