@@ -74,6 +74,7 @@ function getCardElement(cardData) {
   // access the card title and image and store them in variables
   const cardImageEl = cardElement.querySelector(".card__image");
   const cardTitleEl = cardElement.querySelector(".card__title");
+  const cardLikeBtn = cardElement.querySelector(".card__like-button")
   // set the path to the image to the link field of the object
   cardImageEl.src = cardData.link;
   // set the image alt text to the name field of the object
@@ -86,7 +87,9 @@ function getCardElement(cardData) {
 
 function renderCard(cardData) {
  const cardElement = getCardElement(cardData);
- cardsWrap.prepend(cardElement);
+ cardListEl.prepend(cardElement);
+
+ return cardElement;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -127,12 +130,6 @@ profileEditCloseButton.addEventListener("click", closePopup);
 
 profileForm.addEventListener("submit", handleProfileFormSubmit);
 
-initialCards.forEach((cardData) => {
-  console.log(cardData);
-  const cardElement = getCardElement(cardData);
-  cardListEl.prepend(cardElement);
-});
-
 profileAddButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitleInput.textContent;
   profileDescription.value = profileDescriptionInput.textContent;
@@ -142,12 +139,18 @@ profileAddButton.addEventListener("click", () => {
 profileFormElement.addEventListener("submit", handleProfileFormSubmit);
 addCardFormElement.addEventListener("submit", handleAddCardFormSubmit);
 
+initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
 
-initialCards.forEach((cardData) = renderCard(cardData, cardsWrap));
-
-const likeButtons = document.querySelectorAll(".card__like-button")
+const likeButtons = document.querySelectorAll(".card__like-button");
 likeButtons.forEach(likeButtons => {
   likeButtons.addEventListener("click", () => {
-    console.log('click');
+    likeButtons.classList.toggle(".card__like-button_active");
   });
 });
+/*
+function getCardElement() 
+  const cardLikeBtn = getCardElement.querySelector(".card__like-button");
+  cardLikeBtn.addEventLisener("click", () => {
+  cardLikeBtn.classList.add("card__like-button_active");
+  });
+  */
