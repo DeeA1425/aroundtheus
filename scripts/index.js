@@ -83,6 +83,14 @@ function getCardElement(cardData) {
   cardTitleEl.textContent = cardData.name;
   // return the ready HTML element with the filled-in data
   return cardElement;
+  // find delete button
+  const closeCardBtn = addCardModal.querySelector(".modal__close");
+  // add the event listener to the delete button
+  // cardElement.removed()
+
+  //add click listener to cardImage element
+
+  //openModal with previewImageModal
 }
 
 function renderCard(cardData) {
@@ -136,6 +144,10 @@ profileAddButton.addEventListener("click", () => {
   addCardModal.classList.add("modal_opened");
 });
 
+function closePopup(modal) {
+  modal.classList.remove("modal_opened");
+}
+
 profileFormElement.addEventListener("submit", handleProfileFormSubmit);
 addCardFormElement.addEventListener("submit", handleAddCardFormSubmit);
 
@@ -153,4 +165,14 @@ function getCardElement()
   cardLikeBtn.addEventLisener("click", () => {
   cardLikeBtn.classList.add("card__like-button_active");
   });
-  */
+*/
+
+/* for loop that inserts card */
+
+for(let i = 0; i < initialCards.length; i++) {
+  cardsWrap.prepend(getCardElement(initialCards[i]));
+} 
+
+initialCards.forEach((cardData) => {
+ cardsWrap.prepend(getCardElement(cardData));
+})
