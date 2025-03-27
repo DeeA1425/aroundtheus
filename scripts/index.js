@@ -42,17 +42,17 @@ const profileTitleInput = document.querySelector("#profile__title-input");
 const profileDescriptionInput = document.querySelector(
   "#profile__description-input"
 );
+const addCardButton = document.querySelector("#add-card-button");
 const addCardModal = document.querySelector("#profile-add-modal");
 const profileAddCloseButton = addCardModal.querySelector("#modal__close");
-
+const addTitle = document.querySelector(".profile__title");
 const profileAddButton = document.querySelector(".profile__add-button");
 const profileFormElement = profileEditModal.querySelector(".modal__form");
 const addCardFormElement = addCardModal.querySelector(".modal__form");
 
 const profileForm = document.forms["profile-form"];
 const cardListEl = document.querySelector(".cards__list");
-const cardTemplate =
-  document.querySelector("#card-template").content.firstElementChild;
+const cardTemplate = document.querySelector("#card-template").content.firstElementChild;
   const cardsWrap = document.querySelector(".cards__list");
 /* -------------------------------------------------------------------------- */
 /*                                 Form Data                                  */
@@ -176,14 +176,12 @@ function getCardElement()
   cardLikeBtn.addEventLisener("click", () => {
   cardLikeBtn.classList.add("card__like-button_active");
   });
-  
-
+ 
 /* for loop that inserts card */
 
 for(let i = 0; i < initialCards.length; i++) {
   cardsWrap.prepend(getCardElement(initialCards[i]));
 } 
-
 
 initialCards.forEach((cardData) => {
  cardsWrap.prepend(getCardElement(cardData));

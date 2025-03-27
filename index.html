@@ -6,7 +6,7 @@
     <title>Around The US</title>
     <link rel="stylesheet" href="./pages/index.css" />
   </head>
-<!--Body-->
+  <!--Body-->
   <body class="page">
     <div class="page__content">
       <header class="header page__section">
@@ -16,7 +16,7 @@
           class="header__logo"
         />
       </header>
-<!--Main-->
+      <!--Main-->
       <main class="content">
         <section class="profile page__section">
           <img
@@ -39,65 +39,61 @@
           <ul class="cards__list"></ul>
         </section>
       </main>
-<!--Footer-->
+      <!--Footer-->
       <footer class="footer page__section">
         <p class="footer__copyright">&copy;2022 Around The U.S.</p>
       </footer>
     </div>
-<!--Edit Profile Modal-->
+    <!--Edit Profile Modal-->
     <div class="modal" id="profile-edit-modal">
       <div class="modal__container">
         <button class="modal__close" id="modal__close"></button>
         <p class="modal__heading">Edit Profile</p>
         <form class="modal__form" id="profile-edit-form" name="profile-form">
-          <input  
-           class="modal__input"
-           name="title"
-           id="profile__title-input" 
-           placeholder="Jacques Cousteau" 
-           type="text"
+          <input
+            class="modal__input"
+            name="title"
+            id="profile__title-input"
+            placeholder="Jacques Cousteau"
+            type="text"
           />
-          <input 
-           class="modal__input"
-           name="description"
-           id="profile__description-input" 
-           placeholder="Explorer" 
-           type="text"
+          <input
+            class="modal__input"
+            name="description"
+            id="profile__description-input"
+            placeholder="Explorer"
+            type="text"
           />
           <button class="modal__button">Save</button>
         </form>
       </div>
     </div>
-<!--Profile Add Card Modal-->
+    <!--Profile Add Card Modal-->
     <div class="modal" id="profile-add-modal">
       <div class="modal__container">
         <button class="modal__close" id="modal__close"></button>
         <p class="modal__heading">New Place</p>
-        <form class="modal__form" id="add-card-form">
-          <input  
-           class="modal__input modal__input_type_title"
-           name="title"
-           placeholder="Title" 
-           type="text"
+        <form class="modal__form" id="add-card-form" name="card-form">
+          <input
+            class="modal__input modal__input_type_title"
+            name="title"
+            placeholder="Title"
+            type="text"
           />
-          <input 
-           class="modal__input modal__input_type_url"
-           name="url"
-           placeholder="Image URL" 
-           type="text"
+          <input
+            class="modal__input modal__input_type_url"
+            name="url"
+            placeholder="Image URL"
+            type="text"
           />
           <button class="modal__button">Save</button>
         </form>
       </div>
     </div>
-<!--Card Template-->
+    <!--Card Template-->
     <template id="card-template">
       <li class="card">
-        <img
-          src=""
-          alt=""
-          class="card__image"
-        />
+        <img src="" alt="" class="card__image" />
         <div class="card__description">
           <h2 class="card__title"></h2>
           <button class="card__like-button" type="button"></button>
