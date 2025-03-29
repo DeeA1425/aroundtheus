@@ -46,14 +46,14 @@ const addCardButton = document.querySelector("#add-card-button");
 const addCardModal = document.querySelector("#profile-add-modal");
 const profileAddCloseButton = addCardModal.querySelector(".modal__close");
 const addTitle = document.querySelector(".profile__title");
-const profileAddButton = document.querySelector(".profile-add-button");
+const profileAddButton = document.querySelector(".profile__add-button");
 const profileFormElement = profileEditModal.querySelector(".modal__form");
 const addCardFormElement = addCardModal.querySelector(".modal__form");
 
 const profileForm = document.forms["profile-form"];
 const cardListEl = document.querySelector(".cards__list");
 const cardTemplate =
-  document.querySelector("#card-template").content.firstElementChild;
+  document.querySelector("#card-template");
 const cardsWrap = document.querySelector(".cards__list");
 /* -------------------------------------------------------------------------- */
 /*                                 Form Data                                  */
@@ -175,6 +175,18 @@ likeButtons.forEach((likeButtons) => {
     likeButtons.classList.toggle(".card__like-button_active");
   });
 });
+
+function handleLike() {
+
+}
+
+function handleDeleteCard() {
+
+}
+
+function handleImageClick() {
+
+}
 
 function getCardElement(data) {
   const cardElement = cardTemplate.content
