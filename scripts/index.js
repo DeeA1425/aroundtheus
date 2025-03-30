@@ -210,11 +210,6 @@ function getCardElement(data) {
 
 /* for loop that inserts card */
 
-for (let i = 0; i < initialCards.length; i++) {
-  cardsWrap.prepend(getCardElement(initialCards[i]));
-}
-
 initialCards.forEach((cardData) => {
   cardsWrap.prepend(getCardElement(cardData));
 });
-
