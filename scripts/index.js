@@ -73,13 +73,17 @@ function closePopup(modal) {
   modal.classList.remove("modal_opened");
 }
 
+/*
+// here your code and close with the same but in the other way
+
 function getCardElement(cardData) {
   // clone the template element with all its content and store it in a cardElement variable
   const cardElement = cardTemplate.cloneNode(true);
   // access the card title and image and store them in variables
   const cardImageEl = cardElement.querySelector(".card__image");
   const cardTitleEl = cardElement.querySelector(".card__title");
-  const cardLikeBtn = cardElement.querySelector(".card__like-button");
+  const likeButton = cardElement.querySelector(".card__like-button");
+
   // set the path to the image to the link field of the object
   cardImageEl.src = cardData.link;
   // set the image alt text to the name field of the object
@@ -99,6 +103,7 @@ function getCardElement(cardData) {
   // return the ready HTML element with the filled-in data
   return cardElement;
 }
+*/
 
 function renderCard(cardData) {
   const cardElement = getCardElement(cardData);
@@ -168,12 +173,6 @@ function closePopup(modal) {
 profileFormElement.addEventListener("submit", handleProfileFormSubmit);
 addCardFormElement.addEventListener("submit", handleAddCardFormSubmit);
 
-const likeButtons = document.querySelectorAll(".card__like-button");
-likeButtons.forEach((likeButton) => {
-  likeButton.addEventListener("click", () => {
-    likeButton.classList.toggle(".card__like-button_active");
-  });
-});
 
 function handleLike() {}
 
@@ -188,6 +187,11 @@ function getCardElement(data) {
   const cardTitleEl = cardElement.querySelector(".card__title");
   const cardImageEl = cardElement.querySelector(".card__image");
   const likeButton = cardElement.querySelector(".card__like-button");
+
+  likeButton.addEventListener("click", () => {
+    likeButton.classList.toggle(".card__like-button_active");
+  });
+
   const deleteButton = cardElement.querySelector(".card__delete-button");
 
   cardTitleEl.textContent = data.name;
