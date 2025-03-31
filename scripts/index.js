@@ -52,8 +52,7 @@ const addCardFormElement = addCardModal.querySelector(".modal__form");
 
 const profileForm = document.forms["profile-form"];
 const cardListEl = document.querySelector(".cards__list");
-const cardTemplate =
-  document.querySelector("#card-template");
+const cardTemplate = document.querySelector("#card-template");
 const cardsWrap = document.querySelector(".cards__list");
 /* -------------------------------------------------------------------------- */
 /*                                 Form Data                                  */
@@ -87,16 +86,18 @@ function getCardElement(cardData) {
   cardImageEl.alt = cardData.name;
   // set the card title to the name field of the object, too
   cardTitleEl.textContent = cardData.name;
-  // return the ready HTML element with the filled-in data
-  return cardElement;
   // find delete button
   const closeCardBtn = addCardModal.querySelector(".modal__close");
   // add the event listener to the delete button
+
   // cardElement.removed()
 
   //add click listener to cardImage element
 
   //openModal with previewImageModal
+
+  // return the ready HTML element with the filled-in data
+  return cardElement;
 }
 
 function renderCard(cardData) {
@@ -167,26 +168,18 @@ function closePopup(modal) {
 profileFormElement.addEventListener("submit", handleProfileFormSubmit);
 addCardFormElement.addEventListener("submit", handleAddCardFormSubmit);
 
-initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
-
 const likeButtons = document.querySelectorAll(".card__like-button");
-likeButtons.forEach((likeButtons) => {
-  likeButtons.addEventListener("click", () => {
-    likeButtons.classList.toggle(".card__like-button_active");
+likeButtons.forEach((likeButton) => {
+  likeButton.addEventListener("click", () => {
+    likeButton.classList.toggle(".card__like-button_active");
   });
 });
 
-function handleLike() {
+function handleLike() {}
 
-}
+function handleDeleteCard() {}
 
-function handleDeleteCard() {
-
-}
-
-function handleImageClick() {
-
-}
+function handleImageClick() {}
 
 function getCardElement(data) {
   const cardElement = cardTemplate.content
