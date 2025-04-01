@@ -187,7 +187,7 @@ function getCardElement(data) {
   console.log(likeButton)
 
   likeButton.addEventListener("click", () => {
-    likeButton.classList.toggle(".card__like-button_active");
+    likeButton.classList.toggle("card__like-button_active");
   });
 
   const deleteButton = cardElement.querySelector(".card__delete-button");
