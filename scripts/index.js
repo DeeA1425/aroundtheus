@@ -177,6 +177,9 @@ function handleDeleteCard() {}
 
 function handleImageClick() {}
 
+/* -------------------------------------------------------------------------- */
+/*                             Card Like Button                               */
+/* -------------------------------------------------------------------------- */
 function getCardElement(data) {
   const cardElement = cardTemplate.content
     .querySelector(".card")
