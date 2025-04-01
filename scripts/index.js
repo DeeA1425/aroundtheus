@@ -135,9 +135,6 @@ function handleAddCardFormSubmit(e) {
     link,
   });
   cardsWrap.prepend(cardElement);
-  closeModal(addCardModal);
-
-  return console.log(cardElement);
   closePopup(addCardModal);
 }
 
@@ -187,6 +184,7 @@ function getCardElement(data) {
   const cardTitleEl = cardElement.querySelector(".card__title");
   const cardImageEl = cardElement.querySelector(".card__image");
   const likeButton = cardElement.querySelector(".card__like-button");
+  console.log(likeButton)
 
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle(".card__like-button_active");
