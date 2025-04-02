@@ -54,9 +54,11 @@ const profileForm = document.forms["profile-form"];
 const cardListEl = document.querySelector(".cards__list");
 const cardTemplate = document.querySelector("#card-template");
 const cardsWrap = document.querySelector(".cards__list");
+
 /* -------------------------------------------------------------------------- */
 /*                                 Form Data                                  */
 /* -------------------------------------------------------------------------- */
+
 const cardTitleInput = addCardFormElement.querySelector(
   ".modal__input_type_title"
 );
@@ -65,6 +67,7 @@ const cardUrlInput = addCardFormElement.querySelector(".modal__input_type_url");
 /* -------------------------------------------------------------------------- */
 /*                                  Functions                                 */
 /* -------------------------------------------------------------------------- */
+
 function openPopup(modal) {
   modal.classList.add("modal_opened");
 }
@@ -116,9 +119,11 @@ profileEditButton.addEventListener("click", () => openPopup(profileEditModal));
 profileAddCloseButton.addEventListener("click", () => openPopup(closeModal));
 // add new card button
 profileAddButton.addEventListener("click", () => openPopup(addCardModal));
+
 /* -------------------------------------------------------------------------- */
 /*                                Event Handler                               */
 /* -------------------------------------------------------------------------- */
+
 function handleProfileFormSubmit(e) {
   e.preventDefault();
   profileTitle.textContent = profileTitleInput.value;
@@ -141,6 +146,7 @@ function handleAddCardFormSubmit(e) {
 /* -------------------------------------------------------------------------- */
 /*                               Event Listener                               */
 /* -------------------------------------------------------------------------- */
+
 profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
@@ -170,7 +176,6 @@ function closePopup(modal) {
 profileFormElement.addEventListener("submit", handleProfileFormSubmit);
 addCardFormElement.addEventListener("submit", handleAddCardFormSubmit);
 
-
 function handleLike() {}
 
 function handleDeleteCard() {}
@@ -180,6 +185,7 @@ function handleImageClick() {}
 /* -------------------------------------------------------------------------- */
 /*                             Card Like Button                               */
 /* -------------------------------------------------------------------------- */
+
 function getCardElement(data) {
   const cardElement = cardTemplate.content
     .querySelector(".card")
@@ -187,7 +193,7 @@ function getCardElement(data) {
   const cardTitleEl = cardElement.querySelector(".card__title");
   const cardImageEl = cardElement.querySelector(".card__image");
   const likeButton = cardElement.querySelector(".card__like-button");
-  console.log(likeButton)
+  console.log(likeButton);
 
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("card__like-button_active");
