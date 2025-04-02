@@ -205,7 +205,6 @@ function getCardElement(data) {
   cardImageEl.src = data.link;
   cardImageEl.alt = data.name;
 
-  likeButton.addEventListener("click", handleLike);
   deleteButton.addEventListener("click", handleDeleteCard);
   cardImageEl.addEventListener("click", () => handleImageClick(data));
 
