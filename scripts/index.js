@@ -205,7 +205,10 @@ function getCardElement(data) {
   cardImageEl.src = data.link;
   cardImageEl.alt = data.name;
 
-  deleteButton.addEventListener("click", handleDeleteCard);
+  deleteButton.addEventListener("click", () => {
+    cardElement.remove();
+  });
+  
   cardImageEl.addEventListener("click", () => handleImageClick(data));
 
   return cardElement;
