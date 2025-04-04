@@ -180,7 +180,12 @@ function handleLike() {}
 
 function handleDeleteCard() {}
 
-function handleImageClick() {}
+function handleImageClick(data) {
+  previewImage.src = data.link;
+  previewImage.alt = data.name;
+  previewCaption.textContent = data.name;
+  openModal(previewModal);
+};
 
 /* -------------------------------------------------------------------------- */
 /*                             Card Like Button                               */
@@ -208,7 +213,7 @@ function getCardElement(data) {
   deleteButton.addEventListener("click", () => {
     cardElement.remove();
   });
-  
+
   cardImageEl.addEventListener("click", () => handleImageClick(data));
 
   return cardElement;
