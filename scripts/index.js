@@ -116,7 +116,6 @@ function renderCard(cardData) {
 }
 profileFormElement.addEventListener("submit", handleProfileFormSubmit);
 profileEditButton.addEventListener("click", () => openPopup(profileEditModal));
-profileAddCloseButton.addEventListener("click", () => openPopup(closeModal));
 // add new card button
 profileAddButton.addEventListener("click", () => openPopup(addCardModal));
 
