@@ -57,7 +57,8 @@ const cardsWrap = document.querySelector(".cards__list");
 const previewImageModal = document.querySelector("#preview-modal");
 const previewImage = previewImageModal.querySelector(".modal__preview-image");
 const previewCaption = previewImageModal.querySelector(".modal__caption");
-const previewImageCloseButton = previewImageModal.querySelector(".modal__close");
+const previewImageCloseButton =
+  previewImageModal.querySelector(".modal__close");
 /* -------------------------------------------------------------------------- */
 /*                                 Form Data                                  */
 /* -------------------------------------------------------------------------- */
@@ -163,11 +164,9 @@ profileAddCloseButton.addEventListener("click", () => {
   closePopup(addCardModal);
 });
 
-
-previewImageCloseButton.addEventListener("click", () => { 
+previewImageCloseButton.addEventListener("click", () => {
   closePopup(previewImageModal);
 });
-
 
 profileForm.addEventListener("submit", handleProfileFormSubmit);
 
