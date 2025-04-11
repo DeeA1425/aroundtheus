@@ -54,7 +54,9 @@ const profileForm = document.forms["profile-form"];
 const cardListEl = document.querySelector(".cards__list");
 const cardTemplate = document.querySelector("#card-template");
 const cardsWrap = document.querySelector(".cards__list");
-
+const previewImageModal = document.querySelector("#preview-modal")
+const previewImage = previewImageModal.querySelector(".modal__preview-image")
+const previewCaption = previewImageModal.querySelector(".modal__caption")
 /* -------------------------------------------------------------------------- */
 /*                                 Form Data                                  */
 /* -------------------------------------------------------------------------- */
@@ -183,7 +185,7 @@ function handleImageClick(data) {
   previewImage.src = data.link;
   previewImage.alt = data.name;
   previewCaption.textContent = data.name;
-  openModal(previewModal);
+  openPopup(previewImageModal);
 };
 
 /* -------------------------------------------------------------------------- */

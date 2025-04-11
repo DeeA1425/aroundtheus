@@ -78,9 +78,17 @@
   height: 50px;
 }
 
-@media screen and (max-width: 620px) {
+.modal__image-container {
+  position: relative;
+}
 
-  .modal_opened{
+.modal__preview-image {
+  width: 433px;
+  height: 540px;
+}
+
+@media screen and (max-width: 620px) {
+  .modal_opened {
     display: flex;
   }
 
@@ -99,15 +107,15 @@
     margin: 17px 0 75px;
   }
 
-  .modal__form{
+  .modal__form {
     margin-top: 53px;
   }
 
   .modal__close {
-   right: 7px;
-   top: -42px;
-   width: 20px;
-   height: 20px;
+    right: 7px;
+    top: -42px;
+    width: 20px;
+    height: 20px;
   }
 
   .modal__button {
