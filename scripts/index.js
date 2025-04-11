@@ -54,9 +54,10 @@ const profileForm = document.forms["profile-form"];
 const cardListEl = document.querySelector(".cards__list");
 const cardTemplate = document.querySelector("#card-template");
 const cardsWrap = document.querySelector(".cards__list");
-const previewImageModal = document.querySelector("#preview-modal")
-const previewImage = previewImageModal.querySelector(".modal__preview-image")
-const previewCaption = previewImageModal.querySelector(".modal__caption")
+const previewImageModal = document.querySelector("#preview-modal");
+const previewImage = previewImageModal.querySelector(".modal__preview-image");
+const previewCaption = previewImageModal.querySelector(".modal__caption");
+const previewImageCloseButton = previewImageModal.querySelector(".modal__close");
 /* -------------------------------------------------------------------------- */
 /*                                 Form Data                                  */
 /* -------------------------------------------------------------------------- */
@@ -162,6 +163,12 @@ profileAddCloseButton.addEventListener("click", () => {
   closePopup(addCardModal);
 });
 
+
+previewImageCloseButton.addEventListener("click", () => { 
+  closePopup(previewImageModal);
+});
+
+
 profileForm.addEventListener("submit", handleProfileFormSubmit);
 
 profileAddButton.addEventListener("click", () => {
@@ -186,7 +193,7 @@ function handleImageClick(data) {
   previewImage.alt = data.name;
   previewCaption.textContent = data.name;
   openPopup(previewImageModal);
-};
+}
 
 /* -------------------------------------------------------------------------- */
 /*                             Card Like Button                               */
