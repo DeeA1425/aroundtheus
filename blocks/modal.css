@@ -125,11 +125,19 @@
     height: 46px;
   }
 
-  /*
+  
   .modal__preview-image {
     max-width: 430px;
     width: 100%;
-    height: 540px;
+    min-height: 323px;
   }
-    */
+
+}
+
+@media screen and (max-width: 480px) {
+  .modal__preview-image {
+    max-width: 240px;
+    width: 100%;
+    min-height: 299px;
+  }
 }
