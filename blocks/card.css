@@ -63,3 +63,7 @@ background-image: url(../images/like-active.svg);
     cursor: auto;
     cursor: pointer;
   }
+
+  .card__delete-button:hover {
+    background: transparent url(../images/Trash_icon-active.svg) center no-repeat;
+  }
