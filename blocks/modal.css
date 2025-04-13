@@ -9,11 +9,10 @@
   justify-content: center;
   z-index: 999;
   background-color: rgba(0, 0, 0, 0.5);
-  display: none;
   padding: 0 19px;
   visibility: hidden;
   opacity: 0;
-  transition: visability 0s linear 0.5s, opacity 0.5s linear;
+  transition: visibility 0s linear 0.5s, opacity 0.5s linear;
 }
 
 .modal_opened {
