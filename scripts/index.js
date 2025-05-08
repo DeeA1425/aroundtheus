@@ -231,3 +231,4 @@ function getCardElement(data) {
 initialCards.forEach((cardData) => {
   cardsWrap.prepend(getCardElement(cardData));
 });
+
