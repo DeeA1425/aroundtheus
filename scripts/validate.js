@@ -4,7 +4,11 @@
 function setEventListeners(formEl, options) {
   const { inputSelector } = options;
   const inputEls = [...formEl.querySelectorAll(inputSelector)];
-
+  inputEls.forEach(inputEl => {
+    inputEl.addEventListener("input", (e) => {
+    console.dir(inputEl);
+  });
+});
 }
 
 function enableValidation(options) {
