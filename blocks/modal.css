@@ -86,6 +86,16 @@
   height: 540px;
 }
 
+.modal__input_type_error {
+  display: block;
+  color: #ff0000;
+  border-bottom: 1px solid #ff0000;
+}
+
+.modal__button_disabled {
+  color: #ffffff;
+}
+
 @media screen and (max-width: 620px) {
   .modal_opened {
     display: flex;
@@ -135,7 +145,7 @@
   .modal__preview-image {
     max-width: 282px;
     width: 100%;
-    max-height:80vh;
+    max-height: 80vh;
     min-height: unset;
     height: unset;
   }

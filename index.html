@@ -50,33 +50,35 @@
         <button class="modal__close" type="button" id="modal__close"></button>
         <p class="modal__heading">Edit Profile</p>
         <form class="modal__form" id="profile-edit-form" name="profile-form">
-          <input
-            class="modal__input"
-            name="title"
-            id="profile__title-input"
-            placeholder="Jacques Cousteau"
-            type="text"
-            minlength="2"
-            maxlength="40"
-            required
-          />
-          <span class="modal__input_type_error" id="owner-name-error"
-            >Error message here</span
-          >
-          <input
-            class="modal__input"
-            name="description"
-            id="profile__description-input"
-            placeholder="Explorer"
-            type="text"
-            minlength="2"
-            maxlength="200"
-            required
-          />
-          <span class="modal__input_type_error" id="owner-name-error"
-            >Error message here</span
-          >
-          <button class="modal__button" type="submit">Save</button>
+          <label>
+            <input
+              class="modal__input"
+              name="title"
+              id="profile__title-input"
+              placeholder="Jacques Cousteau"
+              type="text"
+              minlength="2"
+              maxlength="40"
+              required
+            />
+            <span class="modal__input_type_error" id="owner-name-error"
+              >Please fill out this field.</span
+            >
+            <input
+              class="modal__input"
+              name="description"
+              id="profile__description-input"
+              placeholder="Explorer"
+              type="text"
+              minlength="2"
+              maxlength="200"
+              required
+            />
+            <span class="modal__input_type_error" id="owner-description-error"
+              >Please fill out this field.</span
+            >
+          </label>
+          <button class="modal__button modal__button_disabled" type="submit" disabled>Save</button>
         </form>
       </div>
     </div>
@@ -86,19 +88,31 @@
         <button class="modal__close" type="button" id="modal__close"></button>
         <p class="modal__heading">New Place</p>
         <form class="modal__form" id="add-card-form" name="card-form">
-          <input
-            class="modal__input modal__input_type_title"
-            name="title"
-            placeholder="Title"
-            type="text"
-          />
-          <input
-            class="modal__input modal__input_type_url"
-            name="url"
-            placeholder="Image URL"
-            type="text"
-          />
-          <button class="modal__button" type="submit">Save</button>
+          <label>
+            <input
+              class="modal__input modal__input_type_title"
+              name="title"
+              placeholder="Title"
+              type="text"
+              minlength="1"
+              maxlength="30"
+              required
+            />
+            <span class="modal__input_type_error" id="owner-name-error"
+              >Please fill out this field.</span
+            >
+            <input
+              class="modal__input modal__input_type_url"
+              name="url"
+              placeholder="Image URL"
+              type="text"
+              required
+            />
+            <span class="modal__input_type_error" id="owner-name-error"
+              >Please enter a web address.</span
+            >
+          </label>
+          <button class="modal__button modal__button_disabled" type="submit" disabled>Save</button>
         </form>
       </div>
     </div>
