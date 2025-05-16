@@ -19,23 +19,25 @@ function checkInputValidity(formEl, inputEl, options) {
   if (!inputEl.validity.valid) {
     return showInputError(formEl, inputEl, options);
   }
-  
+
   hideInputError(formEl, inputEl, options);
 }
 
+function hasInvalidInput(inputList) {
+  return !inputList.every((inputEl) => inputEl.validity.valid);
+}
+
+// function disableButton() {}
+
+// function enableButton() {}
+
 function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
-  let foundInvalid = false;
-
-  inputEls.forEach((input) => {
-    if (!inputEl.validity.valid) {
-      foundInvalid = true;
-    }
-  });
-
-  if (foundInvalid) {
+  if (hasInvalidInput(inputEls)) {
     submitButton.classList.add(inactiveButtonClass);
-    return (submitButton.disabled = true);
+    submitButton.disabled = true;
+    return;
   }
+
   submitButton.classList.remove(inactiveButtonClass);
   submitButton.disabled = false;
 }

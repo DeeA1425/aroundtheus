@@ -50,7 +50,7 @@
         <button class="modal__close" type="button" id="modal__close"></button>
         <p class="modal__heading">Edit Profile</p>
         <form class="modal__form" id="profile-edit-form" name="profile-form">
-          <label>
+          <label class="modal__label" for="profile__title-input">
             <input
               class="modal__input"
               name="title"
@@ -61,9 +61,9 @@
               maxlength="40"
               required
             />
-            <span class="modal__input_type_error" id="owner-name-error"
-              >Please fill out this field.</span
-            >
+            <span class="modal__input_type_error" id="owner-name-error"></span>
+          </label>
+          <label>
             <input
               class="modal__input"
               name="description"
@@ -74,11 +74,18 @@
               maxlength="200"
               required
             />
-            <span class="modal__input_type_error" id="owner-description-error"
-              >Please fill out this field.</span
-            >
+            <span
+              class="modal__input_type_error"
+              id="owner-description-error"
+            ></span>
           </label>
-          <button class="modal__button modal__button_disabled" type="submit" disabled>Save</button>
+          <button
+            class="modal__button modal__button_disabled"
+            type="submit"
+            disabled
+          >
+            Save
+          </button>
         </form>
       </div>
     </div>
@@ -88,7 +95,7 @@
         <button class="modal__close" type="button" id="modal__close"></button>
         <p class="modal__heading">New Place</p>
         <form class="modal__form" id="add-card-form" name="card-form">
-          <label>
+          <label calss="modal__label" for="profile__description-input">
             <input
               class="modal__input modal__input_type_title"
               name="title"
@@ -98,9 +105,9 @@
               maxlength="30"
               required
             />
-            <span class="modal__input_type_error" id="owner-name-error"
-              >Please fill out this field.</span
-            >
+            <span class="modal__input_type_error" id="owner-name-error"></span>
+          </label>
+          <label>
             <input
               class="modal__input modal__input_type_url"
               name="url"
@@ -108,11 +115,15 @@
               type="text"
               required
             />
-            <span class="modal__input_type_error" id="owner-name-error"
-              >Please enter a web address.</span
-            >
+            <span class="modal__input_type_error" id="owner-name-error"></span>
           </label>
-          <button class="modal__button modal__button_disabled" type="submit" disabled>Save</button>
+          <button
+            class="modal__button modal__button_disabled"
+            type="submit"
+            disabled
+          >
+            Save
+          </button>
         </form>
       </div>
     </div>
