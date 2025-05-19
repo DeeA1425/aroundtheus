@@ -89,11 +89,12 @@
 .modal__input_type_error {
   display: block;
   color: #ff0000;
- /* border-bottom: 1px solid #ff0000; */
+  border-bottom-color: 1px solid #ff0000;
 }
 
 .modal__button_disabled {
-  color: #ffffff;
+  opacity: 50%;
+  pointer-events: none;
 }
 
 @media screen and (max-width: 620px) {

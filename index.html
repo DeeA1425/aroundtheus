@@ -61,7 +61,10 @@
               maxlength="40"
               required
             />
-            <span class="modal__input_type_error" id="owner-name-error"></span>
+            <span
+              class="modal__input_type_error"
+              id="profile__title-input-error"
+            ></span>
           </label>
           <label>
             <input
@@ -76,14 +79,10 @@
             />
             <span
               class="modal__input_type_error"
-              id="owner-description-error"
+              id="profile__description-input-error"
             ></span>
           </label>
-          <button
-            class="modal__button modal__button_disabled"
-            type="submit"
-            disabled
-          >
+          <button class="modal__button modal__button_disabled" type="submit">
             Save
           </button>
         </form>
@@ -99,29 +98,33 @@
             <input
               class="modal__input modal__input_type_title"
               name="title"
+              id="card__description-input"
               placeholder="Title"
               type="text"
               minlength="1"
               maxlength="30"
               required
             />
-            <span class="modal__input_type_error" id="owner-name-error"></span>
+            <span
+              class="modal__input_type_error"
+              id="card__description-input-error"
+            ></span>
           </label>
           <label>
             <input
               class="modal__input modal__input_type_url"
               name="url"
+              id="card__url-input"
               placeholder="Image URL"
               type="text"
               required
             />
-            <span class="modal__input_type_error" id="owner-name-error"></span>
+            <span
+              class="modal__input_type_error"
+              id="card__url-input-error"
+            ></span>
           </label>
-          <button
-            class="modal__button modal__button_disabled"
-            type="submit"
-            disabled
-          >
+          <button class="modal__button modal__button_disabled" type="submit">
             Save
           </button>
         </form>
