@@ -38,22 +38,18 @@ function hasInvalidInput(inputList) {
 const disableButton = (buttonElement, config) => {
   buttonElement.classList.add(config.inactiveButtonClass);
   buttonElement.disabled = true;
+};
 
-  const enableButton = (buttonElement, config) => {
-    buttonElement.classList.remove(config.inactiveButtonClass);
-    buttonElement.disabled = false;
-  }
-}
+const enableButton = (buttonElement, config) => {
+  buttonElement.classList.remove(config.inactiveButtonClass);
+  buttonElement.disabled = false;
+};
 
-function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
+function toggleButtonState(inputEls, submitButton, config) {
   if (hasInvalidInput(inputEls)) {
-    submitButton.classList.add(inactiveButtonClass);
-    submitButton.disabled = true;
-    return;
+    return disableButton(submitButton, config);
   }
-
-  submitButton.classList.remove(inactiveButtonClass);
-  submitButton.disabled = false;
+  enableButton(submitButton, config);
 }
 
 function setEventListeners(formEl, options) {

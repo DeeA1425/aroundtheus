@@ -74,43 +74,13 @@ const cardUrlInput = addCardFormElement.querySelector(".modal__input_type_url");
 
 function openPopup(modal) {
   modal.classList.add("modal_opened");
+  document.addEventListener("keydown", handleEscapeClose);
 }
 
 function closePopup(modal) {
   modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", handleEscapeClose);
 }
-
-/*
-// here your code and close with the same but in the other way
-
-function getCardElement(cardData) {
-  // clone the template element with all its content and store it in a cardElement variable
-  const cardElement = cardTemplate.cloneNode(true);
-  // access the card title and image and store them in variables
-  const cardImageEl = cardElement.querySelector(".card__image");
-  const cardTitleEl = cardElement.querySelector(".card__title");
-  const likeButton = cardElement.querySelector(".card__like-button");
-
-  // set the path to the image to the link field of the object
-  cardImageEl.src = cardData.link;
-  // set the image alt text to the name field of the object
-  cardImageEl.alt = cardData.name;
-  // set the card title to the name field of the object, too
-  cardTitleEl.textContent = cardData.name;
-  // find delete button
-  const closeCardBtn = addCardModal.querySelector(".modal__close");
-  // add the event listener to the delete button
-
-  // cardElement.removed()
-
-  //add click listener to cardImage element
-
-  //openModal with previewImageModal
-
-  // return the ready HTML element with the filled-in data
-  return cardElement;
-}
-*/
 
 function renderCard(cardData) {
   const cardElement = getCardElement(cardData);
@@ -144,6 +114,7 @@ function handleAddCardFormSubmit(e) {
   });
   cardsWrap.prepend(cardElement);
   closePopup(addCardModal);
+  e.target.reset();
 }
 
 /* -------------------------------------------------------------------------- */
@@ -232,3 +203,15 @@ initialCards.forEach((cardData) => {
   cardsWrap.prepend(getCardElement(cardData));
 });
 
+function handleEscapeClose(event) {
+  if (event.key === "Escape" || event.key === "Esc") {
+    const openedModal = document.querySelector(".modal_opened");
+
+    if (openedModal) {
+      closePopup(openedModal);
+    }
+  }
+  console.log("Escape key pressed");
+}
+
+// and use closeModal() with that modal
