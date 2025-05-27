@@ -141,22 +141,8 @@ previewImageCloseButton.addEventListener("click", () => {
 
 profileForm.addEventListener("submit", handleProfileFormSubmit);
 
-profileAddButton.addEventListener("click", () => {
-  profileTitleInput.value = profileTitleInput.textContent;
-  profileDescription.value = profileDescriptionInput.textContent;
-  addCardModal.classList.add("modal_opened");
-});
-
-function closePopup(modal) {
-  modal.classList.remove("modal_opened");
-}
-
 profileFormElement.addEventListener("submit", handleProfileFormSubmit);
 addCardFormElement.addEventListener("submit", handleAddCardFormSubmit);
-
-function handleLike() {}
-
-function handleDeleteCard() {}
 
 function handleImageClick(data) {
   previewImage.src = data.link;
@@ -176,7 +162,6 @@ function getCardElement(data) {
   const cardTitleEl = cardElement.querySelector(".card__title");
   const cardImageEl = cardElement.querySelector(".card__image");
   const likeButton = cardElement.querySelector(".card__like-button");
-  console.log(likeButton);
 
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("card__like-button_active");
@@ -203,6 +188,7 @@ initialCards.forEach((cardData) => {
   cardsWrap.prepend(getCardElement(cardData));
 });
 
+// Esc Modal Close
 function handleEscapeClose(event) {
   if (event.key === "Escape" || event.key === "Esc") {
     const openedModal = document.querySelector(".modal_opened");
@@ -211,7 +197,17 @@ function handleEscapeClose(event) {
       closePopup(openedModal);
     }
   }
-  console.log("Escape key pressed");
 }
 
-// and use closeModal() with that modal
+// Modal Close Overlay
+const modals = document.querySelectorAll(".modal");
+
+const handleModalClose = (evt) => {
+  if (evt.target.classList.contains("modal")) {
+    closePopup(evt.currentTarget);
+  }
+};
+
+modals.forEach((modal) => {
+  modal.addEventListener("mousedown", handleModalClose);
+});

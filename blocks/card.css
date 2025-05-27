@@ -12,6 +12,10 @@
   height: 282px;
 }
 
+.card__image:hover {
+  cursor: pointer;
+}
+
 .card__title {
   font-size: 24px;
   font-weight: 900;
