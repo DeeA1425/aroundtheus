@@ -87,6 +87,9 @@
 }
 
 .modal__input_type_error {
+  position: absolute;
+  top: calc(100%+5px);
+  left: 0;
   display: block;
   color: #ff0000;
   border-bottom-color: 1px solid #ff0000;
