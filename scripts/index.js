@@ -47,7 +47,6 @@ const addCardModal = document.querySelector("#profile-add-modal");
 const profileAddCloseButton = addCardModal.querySelector(".modal__close");
 const addTitle = document.querySelector(".profile__title");
 const profileAddButton = document.querySelector(".profile__add-button");
-const profileFormElement = profileEditModal.querySelector(".modal__form");
 const addCardFormElement = addCardModal.querySelector(".modal__form");
 
 const profileForm = document.forms["profile-form"];
@@ -59,6 +58,7 @@ const previewImage = previewImageModal.querySelector(".modal__preview-image");
 const previewCaption = previewImageModal.querySelector(".modal__caption");
 const previewImageCloseButton =
   previewImageModal.querySelector(".modal__close");
+const profileFormElement = document.querySelector(".modal__form");
 /* -------------------------------------------------------------------------- */
 /*                                 Form Data                                  */
 /* -------------------------------------------------------------------------- */
@@ -89,7 +89,6 @@ function renderCard(cardData) {
   return cardElement;
 }
 profileFormElement.addEventListener("submit", handleProfileFormSubmit);
-profileEditButton.addEventListener("click", () => openPopup(profileEditModal));
 // add new card button
 profileAddButton.addEventListener("click", () => openPopup(addCardModal));
 
@@ -115,7 +114,6 @@ function handleAddCardFormSubmit(e) {
   cardsWrap.prepend(cardElement);
   closePopup(addCardModal);
   e.target.reset();
-  disableButton(".modal__button", addCardModal);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -140,9 +138,6 @@ previewImageCloseButton.addEventListener("click", () => {
   closePopup(previewImageModal);
 });
 
-profileForm.addEventListener("submit", handleProfileFormSubmit);
-
-profileFormElement.addEventListener("submit", handleProfileFormSubmit);
 addCardFormElement.addEventListener("submit", handleAddCardFormSubmit);
 
 function handleImageClick(data) {

@@ -67,6 +67,7 @@
 .modal__input {
   height: 27px;
   border: none;
+  max-width: 357px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
