@@ -58,7 +58,7 @@ const previewImage = previewImageModal.querySelector(".modal__preview-image");
 const previewCaption = previewImageModal.querySelector(".modal__caption");
 const previewImageCloseButton =
   previewImageModal.querySelector(".modal__close");
-const profileFormElement = document.querySelector(".modal__form");
+
 /* -------------------------------------------------------------------------- */
 /*                                 Form Data                                  */
 /* -------------------------------------------------------------------------- */
@@ -88,6 +88,7 @@ function renderCard(cardData) {
 
   return cardElement;
 }
+
 profileFormElement.addEventListener("submit", handleProfileFormSubmit);
 // add new card button
 profileAddButton.addEventListener("click", () => openPopup(addCardModal));
