@@ -89,7 +89,7 @@ function renderCard(cardData) {
   return cardElement;
 }
 
-profileFormElement.addEventListener("submit", handleProfileFormSubmit);
+profileForm.addEventListener("submit", handleProfileFormSubmit);
 // add new card button
 profileAddButton.addEventListener("click", () => openPopup(addCardModal));
 
