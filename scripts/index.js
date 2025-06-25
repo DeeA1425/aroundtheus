@@ -1,3 +1,6 @@
+import FormValidator from "./FormValidator.js";
+import Card from "./card.js";
+
 const initialCards = [
   {
     name: "Yosemite Valley",
@@ -59,6 +62,23 @@ const previewCaption = previewImageModal.querySelector(".modal__caption");
 const previewImageCloseButton =
   previewImageModal.querySelector(".modal__close");
 
+const settings = {
+  formSelector: ".modal__form",
+  inputSelector: ".modal__input",
+  submitButtonSelector: ".modal__button",
+  inactiveButtonClass: "modal__button_disabled",
+  inputErrorClass: "modal__input_type_error",
+  errorClass: "modal__error_visible",
+};
+
+const cardData = {
+  name: "Yosemite Valley",
+  link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
+};
+
+const card = new Card(cardData)
+console.log(card);
+
 /* -------------------------------------------------------------------------- */
 /*                                 Form Data                                  */
 /* -------------------------------------------------------------------------- */
@@ -67,6 +87,13 @@ const cardTitleInput = addCardFormElement.querySelector(
   ".modal__input_type_title"
 );
 const cardUrlInput = addCardFormElement.querySelector(".modal__input_type_url");
+
+/* -------------------------------------------------------------------------- */
+/*                                   Classes                                  */
+/* -------------------------------------------------------------------------- */
+
+const profileEditValidaor = new FormValidator(settings, "#profile-edit-form");
+// profileEditValidaor.enableValidation("")
 
 /* -------------------------------------------------------------------------- */
 /*                                  Functions                                 */

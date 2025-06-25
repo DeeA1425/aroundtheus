@@ -9,15 +9,31 @@ class FormValidator {
     this._formElement = formElement;
   }
 
-  toggleButtonState(inputEls, submitButton, config) {
+_showInputError(inputEl, errorMessage) {
+  const errorMessageEl = this._formEl.querySelector(`#${inputEl.id}-error`);
+    inputEl.classList.add(inputErrorClass);
+    errorMessageEl.textContent = inputEl.validationMessage;
+    errorMessageEl.classList.add(errorClass);
+}
+
+  _toggleButtonState(inputEls, submitButton, config) {
     if (hasInvalidInput(inputEls)) {
       buttonElement.classList.add(inactiveButtonClass);
       buttonElement.disableButton = true;
-    } return disableButton(submitButton, config);
-      buttonElement.classList.remove(inactiveButtonClass);
-      buttonElement.disableButton = false;
+    } 
     }
-};
+
+_hasInputError() {}
+
+_checkInputValidity(inputErrorClass) {
+   if (!inputElement.validity.valid) {
+      const errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`);
+    } else {
+      const errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`);
+
+    }
+  }
+
   //  enableButton(submitButton, config);
   
 
@@ -37,13 +53,12 @@ class FormValidator {
     });
   }
 
+
   enableValidation() {
     this._formElement.addEventListener("submit", (e) => {
       e.preventDefault();
     });
   }
 }
-
-const editFormValidator = new FormValidator(settings, editForm);
 
 export default FormValidator;

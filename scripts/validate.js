@@ -1,7 +1,6 @@
 // enabling validation by calling enableValidation()
 // pass all the settings on call
 
-
 function showInputError(formEl, inputEl, { inputErrorClass, errorClass }) {
   const errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`);
   inputEl.classList.add(inputErrorClass);
@@ -27,14 +26,6 @@ function checkInputValidity(formEl, inputEl, options) {
 function hasInvalidInput(inputList) {
   return !inputList.every((inputEl) => inputEl.validity.valid);
 }
-
-/* const toggleButtonState = (inputList, buttonElement, config) => {
-  if (hasInvalidInput(inputList)) {
-    disableButton(buttonElement, config);
-  } else {
-    enableButton(buttonElement, config)
-  }
-}; */
 
 const disableButton = (buttonElement, config) => {
   buttonElement.classList.add(config.inactiveButtonClass);
@@ -94,7 +85,3 @@ const settings = {
   inputErrorClass: "modal__input_type_error",
   errorClass: "modal__error_visible",
 };
-
-const profileFormValidator = new FormValidator(settings, profileForm); 
-
-profileFormValidator.enableValidation();
