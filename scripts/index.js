@@ -1,5 +1,5 @@
-import FormValidator from "./FormValidator.js";
-import Card from "./card.js";
+import FormValidator from "../components/FormValidator.js";
+import Card from "../components/Card.js";
 
 const initialCards = [
   {
@@ -76,8 +76,8 @@ const cardData = {
   link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
 };
 
-const card = new Card(cardData)
-console.log(card);
+const card = new Card(cardData, "#card-template")
+card.getView();
 
 /* -------------------------------------------------------------------------- */
 /*                                 Form Data                                  */
@@ -180,9 +180,10 @@ function handleImageClick(data) {
 /* -------------------------------------------------------------------------- */
 
 function getCardElement(data) {
-  const cardElement = cardTemplate.content
+  const cardElement = cardTemplate.document
     .querySelector(".card")
     .cloneNode(true);
+
   const cardTitleEl = cardElement.querySelector(".card__title");
   const cardImageEl = cardElement.querySelector(".card__image");
   const likeButton = cardElement.querySelector(".card__like-button");
