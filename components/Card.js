@@ -5,14 +5,6 @@ export default class Card {
     this._cardSelector = cardSelector;
   }
 
-  /* _setEventListeners() {
-    //".card__like-button"
-    this._cardElement
-      .querySelector(".card__like-button")
-      .addEventListener("click", () => {
-        this._handleLikeIcon();
-      }); */
-
   _setEventListeners() {
     likeButton.addEventListener("click", () => {
       likeButton.classList.toggle("card__like-button_active");
