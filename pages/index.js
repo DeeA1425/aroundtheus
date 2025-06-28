@@ -79,6 +79,8 @@ const cardData = {
 const card = new Card(cardData, "#card-template")
 card.getView();
 
+const cardSelector = "#card-template";
+
 /* -------------------------------------------------------------------------- */
 /*                                 Form Data                                  */
 /* -------------------------------------------------------------------------- */
@@ -111,7 +113,7 @@ function closePopup(modal) {
 
 function renderCard(cardData) {
   const cardElement = getCardElement(cardData);
-  cardListEl.prepend(cardElement);
+  cardListEl.prepend(cardElement.getView());
 
   return cardElement;
 }
