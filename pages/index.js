@@ -182,7 +182,7 @@ function handleImageClick(data) {
 /* -------------------------------------------------------------------------- */
 
 function getCardElement(data) {
-  const cardElement = cardTemplate.document
+  const cardElement = cardTemplate
     .querySelector(".card")
     .cloneNode(true);
 
@@ -210,10 +210,10 @@ function getCardElement(data) {
 }
 
 /* for loop that inserts card */
-
 initialCards.forEach((cardData) => {
   cardsWrap.prepend(getCardElement(cardData));
 });
+
 
 // Esc.button Modal Close
 function handleEscapeClose(event) {

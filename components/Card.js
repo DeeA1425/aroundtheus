@@ -19,9 +19,9 @@ export default class Card {
       .querySelector(".card__image")
       .addEventListener("click", this._handlePreviewImage);
 
-    /* this._cardElement.addEventListener("click", () => {
+     this._cardElement.addEventListener("click", () => {
       this._handleImageClick(this);
-    }); */
+    }); 
   }
 
   handleLikeIcon() {
