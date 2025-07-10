@@ -61,4 +61,6 @@ _checkInputValidity(inputErrorClass) {
   }
 }
 
+resetValidation() {}
+
 export default FormValidator;
