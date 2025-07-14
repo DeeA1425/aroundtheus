@@ -1,6 +1,13 @@
 // enabling validation by calling enableValidation()
 // pass all the settings on call
 
+const profileEditValidator = new FormValidator(settings, document.querySelector("#profile-edit-form"));
+profileEditValidator.enableValidation();
+
+const addCardValidator = new FormValidator(settings, document.querySelector("#add-card-form"));
+addCardValidator.enableValidation();
+
+
 function showInputError(formEl, inputEl, { inputErrorClass, errorClass }) {
   const errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`);
   inputEl.classList.add(inputErrorClass);

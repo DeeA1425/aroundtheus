@@ -76,10 +76,10 @@ const cardData = {
   link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
 };
 
-const card = new Card(cardData, "#card-template")
+const card = new Card(cardData, "#card-template", handleImageClick);
 card.getView();
 
-const cardSelector = "#card-template";
+// const cardSelector = "#card-template";
 
 /* -------------------------------------------------------------------------- */
 /*                                 Form Data                                  */
@@ -182,7 +182,7 @@ function handleImageClick(data) {
 /* -------------------------------------------------------------------------- */
 
 function getCardElement(data) {
-  const cardElement = cardTemplate
+  const cardElement = cardTemplate.content
     .querySelector(".card")
     .cloneNode(true);
 
@@ -213,7 +213,6 @@ function getCardElement(data) {
 initialCards.forEach((cardData) => {
   cardsWrap.prepend(getCardElement(cardData));
 });
-
 
 // Esc.button Modal Close
 function handleEscapeClose(event) {
