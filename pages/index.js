@@ -77,7 +77,8 @@ const cardData = {
 };
 
 const card = new Card(cardData, "#card-template", handleImageClick);
-card.getView();
+
+card.getView()
 
 // const cardSelector = "#card-template";
 
