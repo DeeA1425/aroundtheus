@@ -95,8 +95,11 @@ const cardUrlInput = addCardFormElement.querySelector(".modal__input_type_url");
 /*                                   Classes                                  */
 /* -------------------------------------------------------------------------- */
 
-const profileEditValidaor = new FormValidator(settings, "#profile-edit-form");
-// profileEditValidaor.enableValidation("")
+const profileEditValidator = new FormValidator(settings, document.querySelector("#profile-edit-form"));
+profileEditValidator.enableValidation();
+
+const addCardValidator = new FormValidator(settings, document.querySelector("#add-card-form"));
+addCardValidator.enableValidation();
 
 /* -------------------------------------------------------------------------- */
 /*                                  Functions                                 */
