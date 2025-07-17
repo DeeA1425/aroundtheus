@@ -9,27 +9,29 @@ class FormValidator {
     this._formElement = formElement;
   }
 
-_showInputError(inputEl, errorMessage) {
-  const errorMessageEl = this._formEl.querySelector(`#${inputEl.id}-error`);
+  _showInputError(inputEl, errorMessage) {
+    const errorMessageEl = this._formElement.querySelector(`#${inputEl.id}-error`);
     inputEl.classList.add(this._inputErrorClass);
     errorMessageEl.textContent = inputEl.validationMessage;
     errorMessageEl.classList.add(this._errorClass);
-}
+  }
 
-_hideInputError(inputEl) {
-    const errorMessageEl = this._formElement.querySelector(`#${inputEl.id}-error`);
+  _hideInputError(inputEl) {
+    const errorMessageEl = this._formElement.querySelector(
+      `#${inputEl.id}-error`
+    );
     inputEl.classList.remove(this._inputErrorClass);
-    errorMessageEl.textContent = '';
+    errorMessageEl.textContent = "";
     errorMessageEl.classList.remove(this._errorClass);
   }
 
- _hasInvalidInput(inputEls) {
+  _hasInvalidInput(inputEls) {
     return inputEls.some((inputEl) => {
       return !inputEl.validity.valid;
     });
   }
 
-_toggleButtonState(inputEls, submitButton) {
+  _toggleButtonState(inputEls, submitButton) {
     if (this._hasInvalidInput(inputEls)) {
       submitButton.classList.add(this._inactiveButtonClass);
       submitButton.disabled = true;
@@ -39,22 +41,22 @@ _toggleButtonState(inputEls, submitButton) {
     }
   }
 
-_checkInputValidity(inputEl) {
+  _checkInputValidity(inputEl) {
     if (!inputEl.validity.valid) {
       this._showInputError(inputEl, inputEl.validationMessage);
     } else {
       this._hideInputError(inputEl);
-    }  
+    }
   }
-  
-    resetValidation() {
+
+  resetValidation() {
     this._inputEls.forEach((inputEl) => {
       this._hideInputError(inputEl);
     });
     this._toggleButtonState(this._inputEls, this._submitButton);
-    }
+  }
 
-  //  enableButton(submitButton, config);  
+  //  enableButton(submitButton, config);
 
   _setEventListener() {
     const { _inputSelector, _submitButtonSelector } = this;
@@ -72,15 +74,13 @@ _checkInputValidity(inputEl) {
     });
   }
 
-
   enableValidation() {
     this._formElement.addEventListener("submit", (e) => {
       e.preventDefault();
     });
   }
 
-
-// resetValidation() {}
+  // resetValidation() {}
 }
 
 export default FormValidator;

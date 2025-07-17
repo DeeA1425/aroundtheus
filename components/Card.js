@@ -24,11 +24,11 @@ export default class Card {
     }); 
   }
 
-  handleLikeIcon() {
+  /* handleLikeIcon() {
     this._element
       .querySelector(".card__like-button")
       .classList.toggle(".card__like-button_active");
-  }
+  } */
 
   _getTemplate() {
     return document
@@ -38,14 +38,14 @@ export default class Card {
   }
 
   _handleLikeIcon() {
-    this._cardElement
+    this._element
       .querySelector(".card__like-button")
-      .classList.toggle("card__like-button_js-active");
+      .classList.toggle(".card__like-button_js-active");
   }
 
   _handleDeleteCard() {
-    this._cardElement.remove();
-    this._cardElement = null;
+    this._element.remove();
+    this._element = null;
   }
 
   getView() {
