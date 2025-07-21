@@ -1,13 +1,6 @@
 // enabling validation by calling enableValidation()
 // pass all the settings on call
 
-const profileEditValidator = new FormValidator(settings, document.querySelector("#profile-edit-form"));
-profileEditValidator.enableValidation();
-
-const addCardValidator = new FormValidator(settings, document.querySelector("#add-card-form"));
-addCardValidator.enableValidation();
-
-
 function showInputError(formEl, inputEl, { inputErrorClass, errorClass }) {
   const errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`);
   inputEl.classList.add(inputErrorClass);
@@ -57,8 +50,8 @@ function setEventListeners(formEl, options) {
   const submitButton = formEl.querySelector(submitButtonSelector);
   inputEls.forEach((inputEl) => {
     inputEl.addEventListener("input", (e) => {
-      checkInputValidity(formEl, inputEl, options);
-      toggleButtonState(inputEls, submitButton, options);
+      this._checkInputValidity(inputEl);
+      this._toggleButtonState(this._inputEls, this._submitButton);
     });
   });
 }
