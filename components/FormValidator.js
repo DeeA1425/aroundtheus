@@ -62,7 +62,9 @@ class FormValidator {
 
   _setEventListener() {
     const { _inputSelector, _submitButtonSelector } = this;
-    this._inputEls = [..._formElement.querySelectorAll(this._inputSelector)];
+    this._inputEls = Array.from(
+      this._formElement.querySelectorAll(this._inputSelector)
+    );
     this._submitButton = this._formElement.querySelector(_submitButtonSelector);
     this._inputEls.forEach((inputEl) => {
       inputEl.addEventListener("input", () => {
@@ -79,7 +81,7 @@ class FormValidator {
     this._setEventListener();
   }
 
-  // resetValidation() {}
+   resetValidation() {}
 }
 
 export default FormValidator;
