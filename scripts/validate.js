@@ -63,6 +63,8 @@ function enableValidation(options) {
       e.preventDefault();
     });
 
+    
+
     setEventListeners(formEl, options);
     // look for all inputs inside of form
     // loop through all the inputs to see if all are valid
