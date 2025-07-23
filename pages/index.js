@@ -76,10 +76,6 @@ const cardData = {
   link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
 };
 
-const card = new Card(cardData, "#card-template", handleImageClick);
-
-card.getView()
-
 // const cardSelector = "#card-template";
 
 /* -------------------------------------------------------------------------- */
@@ -95,10 +91,33 @@ const cardUrlInput = addCardFormElement.querySelector(".modal__input_type_url");
 /*                                   Classes                                  */
 /* -------------------------------------------------------------------------- */
 
-const profileEditValidator = new FormValidator(settings, document.querySelector("#profile-edit-form"));
+const formValidators = {};
+
+const enableValidation = (config) => {
+  const formList = Array.from(document.querySelectorAll(config.formSelector));
+  formList.forEach((formElement) => {
+    const validator = new FormValidator(config, formElement);
+    // Here you get the name of the form (if you don’t have it then you need to add it into each form in `index.html` first)
+    const formName = formElement.getAttribute("name");
+
+    // Here you store the validator using the `name` of the form
+    formValidators[(profileForm, cardForm)] = validator;
+    validator.enableValidation();
+  });
+};
+
+enableValidation(config);
+
+const profileEditValidator = new FormValidator(
+  settings,
+  document.querySelector("profileForm")
+);
 profileEditValidator.enableValidation();
 
-const addCardValidator = new FormValidator(settings, document.querySelector("#add-card-form"));
+const addCardValidator = new FormValidator(
+  settings,
+  document.querySelector("cardForm")
+);
 addCardValidator.enableValidation();
 
 /* -------------------------------------------------------------------------- */
@@ -175,10 +194,15 @@ previewImageCloseButton.addEventListener("click", () => {
 addCardFormElement.addEventListener("submit", handleAddCardFormSubmit);
 
 function handleImageClick(data) {
-  previewImage.src = data.link;
-  previewImage.alt = data.name;
-  previewCaption.textContent = data.name;
+  previewImage.src = Card._data.link;
+  previewImage.alt = Card._data.name;
+  previewCaption.textContent = Card._data.name;
   openPopup(previewImageModal);
+}
+
+function createCard(cardData) {
+  const card = new Card(cardData, "#card-template", handleImageClick);
+  return card.getView();
 }
 
 /* -------------------------------------------------------------------------- */

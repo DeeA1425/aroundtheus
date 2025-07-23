@@ -17,18 +17,8 @@ export default class Card {
 
     this._element
       .querySelector(".card__image")
-      .addEventListener("click", this._handlePreviewImage);
-
-     cardElement.addEventListener("click", () => {
-      this._handleImageClick(this);
-    }); 
+      .addEventListener("click", this._handleImageClick);
   }
-
-  /* handleLikeIcon() {
-    this._element
-      .querySelector(".card__like-button")
-      .classList.toggle(".card__like-button_active");
-  } */
 
   _getTemplate() {
     return document
@@ -49,10 +39,11 @@ export default class Card {
   }
 
   getView() {
-    // const template = this._getTemplate();
     this._element = this._getTemplate();
     this._element.querySelector(".card__like-button");
-    return this._element;
+    this._cardImage = this._element.querySelector(".card__image");
+    this._trashButton = this._element.querySelector(".card__trash-button");
+    return this._cardElement;
 
     // get the card view
     this._element.querySelector(".card__image").src = this._link;
