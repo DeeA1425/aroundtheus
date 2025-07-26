@@ -91,34 +91,36 @@ const cardUrlInput = addCardFormElement.querySelector(".modal__input_type_url");
 /*                                   Classes                                  */
 /* -------------------------------------------------------------------------- */
 
-const formValidators = {};
+// define an object for storing validators
+const formValidators = {}
 
 const enableValidation = (config) => {
-  const formList = Array.from(document.querySelectorAll(config.formSelector));
+  const formList = Array.from(document.querySelectorAll(config.formSelector))
   formList.forEach((formElement) => {
-    const validator = new FormValidator(config, formElement);
+    const validator = new FormValidator(config, formElement)
     // Here you get the name of the form (if you don’t have it then you need to add it into each form in `index.html` first)
-    const formName = formElement.getAttribute("name");
+    const formName = formElement.getAttribute('name')
 
-    // Here you store the validator using the `name` of the form
-    formValidators[(profileForm, cardForm)] = validator;
+   // Here you store the validator using the `name` of the form
+    formValidators[formName] = validator;
     validator.enableValidation();
   });
 };
 
-enableValidation(config);
+enableValidation(settings);
+
 
 const profileEditValidator = new FormValidator(
   settings,
   document.querySelector("profileForm")
 );
-profileEditValidator.enableValidation();
+profileEditValidator.enableValidation(settings);
 
 const addCardValidator = new FormValidator(
   settings,
   document.querySelector("cardForm")
 );
-addCardValidator.enableValidation();
+addCardValidator.enableValidation(settings);
 
 /* -------------------------------------------------------------------------- */
 /*                                  Functions                                 */
