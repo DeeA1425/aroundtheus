@@ -109,19 +109,6 @@ const enableValidation = (config) => {
 
 enableValidation(settings);
 
-
-const profileEditValidator = new FormValidator(
-  settings,
-  document.querySelector("profileForm")
-);
-profileEditValidator.enableValidation(settings);
-
-const addCardValidator = new FormValidator(
-  settings,
-  document.querySelector("cardForm")
-);
-addCardValidator.enableValidation(settings);
-
 /* -------------------------------------------------------------------------- */
 /*                                  Functions                                 */
 /* -------------------------------------------------------------------------- */
