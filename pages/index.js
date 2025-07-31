@@ -183,9 +183,9 @@ previewImageCloseButton.addEventListener("click", () => {
 addCardFormElement.addEventListener("submit", handleAddCardFormSubmit);
 
 function handleImageClick(data) {
-  previewImage.src = Card._data.link;
-  previewImage.alt = Card._data.name;
-  previewCaption.textContent = Card._data.name;
+  previewImage.src = data.link;
+  previewImage.alt = data.name;
+  previewCaption.textContent = data.name;
   openPopup(previewImageModal);
 }
 
