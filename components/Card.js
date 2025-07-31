@@ -43,7 +43,6 @@ export default class Card {
     this._element.querySelector(".card__like-button");
     this._cardImage = this._element.querySelector(".card__image");
     this._trashButton = this._element.querySelector(".card__trash-button");
-    return this._cardElement;
 
     // get the card view
     this._element.querySelector(".card__image").src = this._link;
@@ -53,6 +52,6 @@ export default class Card {
     this._setEventListeners();
 
     // return the card
-    return this._cardElement;
+    return this._element;
   }
 }

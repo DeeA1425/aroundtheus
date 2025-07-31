@@ -43,7 +43,7 @@ const profileTitle = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__description");
 const profileTitleInput = document.querySelector("#profile__title-input");
 const profileDescriptionInput = document.querySelector(
-  "#card__description-input"
+  "#profile__description-input"
 );
 const addCardButton = document.querySelector("#add-card-button");
 const addCardModal = document.querySelector("#profile-add-modal");
@@ -92,16 +92,16 @@ const cardUrlInput = addCardFormElement.querySelector(".modal__input_type_url");
 /* -------------------------------------------------------------------------- */
 
 // define an object for storing validators
-const formValidators = {}
+const formValidators = {};
 
 const enableValidation = (config) => {
-  const formList = Array.from(document.querySelectorAll(config.formSelector))
+  const formList = Array.from(document.querySelectorAll(config.formSelector));
   formList.forEach((formElement) => {
-    const validator = new FormValidator(config, formElement)
+    const validator = new FormValidator(config, formElement);
     // Here you get the name of the form (if you don’t have it then you need to add it into each form in `index.html` first)
-    const formName = formElement.getAttribute('name')
+    const formName = formElement.getAttribute("name");
 
-   // Here you store the validator using the `name` of the form
+    // Here you store the validator using the `name` of the form
     formValidators[formName] = validator;
     validator.enableValidation();
   });
