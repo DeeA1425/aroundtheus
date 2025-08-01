@@ -168,6 +168,11 @@ profileEditButton.addEventListener("click", () => {
   openPopup(profileEditModal);
 });
 
+profileAddButton.addEventListener("click", () => {
+  openPopup(addCardModal);
+  formValidators[addCardFormElement.name].resetValidation();
+});
+
 profileEditCloseButton.addEventListener("click", () => {
   closePopup(profileEditModal);
 });
