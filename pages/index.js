@@ -124,8 +124,11 @@ function closePopup(modal) {
 }
 
 function renderCard(cardData) {
-  const cardElement = getCardElement(cardData);
-  cardListEl.prepend(cardElement.getView());
+  const cardElement = createCard(cardData);
+  cardListEl.prepend(cardElement);
+  initialCards.forEach((cardData) => {
+    renderCard(cardData);
+  });
 
   return cardElement;
 }
@@ -149,7 +152,7 @@ function handleAddCardFormSubmit(e) {
   e.preventDefault();
   const name = cardTitleInput.value;
   const link = cardUrlInput.value;
-  const cardElement = getCardElement({
+  const cardElement = createCard({
     name,
     link,
   });
@@ -202,34 +205,6 @@ function createCard(cardData) {
 /* -------------------------------------------------------------------------- */
 /*                             Card Like Button                               */
 /* -------------------------------------------------------------------------- */
-
-function getCardElement(data) {
-  const cardElement = cardTemplate.content
-    .querySelector(".card")
-    .cloneNode(true);
-
-  const cardTitleEl = cardElement.querySelector(".card__title");
-  const cardImageEl = cardElement.querySelector(".card__image");
-  const likeButton = cardElement.querySelector(".card__like-button");
-
-  likeButton.addEventListener("click", () => {
-    likeButton.classList.toggle("card__like-button_active");
-  });
-
-  const deleteButton = cardElement.querySelector(".card__delete-button");
-
-  cardTitleEl.textContent = data.name;
-  cardImageEl.src = data.link;
-  cardImageEl.alt = data.name;
-
-  deleteButton.addEventListener("click", () => {
-    cardElement.remove();
-  });
-
-  cardImageEl.addEventListener("click", () => handleImageClick(data));
-
-  return cardElement;
-}
 
 /* for loop that inserts card */
 initialCards.forEach((cardData) => {
