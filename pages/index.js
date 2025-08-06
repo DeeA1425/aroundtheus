@@ -208,7 +208,7 @@ function createCard(cardData) {
 
 /* for loop that inserts card */
 initialCards.forEach((cardData) => {
-  cardsWrap.prepend(getCardElement(cardData));
+  cardsWrap.prepend(createCard(cardData));
 });
 
 // Esc.button Modal Close
