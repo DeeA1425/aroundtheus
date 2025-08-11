@@ -27,7 +27,7 @@ class FormValidator {
     errorMessageEl.classList.remove(this._errorClass);
   }
 
-  _hasInvalidInput(inputEls) {
+  _hasInvalidInput() {
     return this._inputEls.some((inputEl) => {
       return !inputEl.validity.valid;
     });
