@@ -158,7 +158,7 @@ function handleAddCardFormSubmit(e) {
   });
   cardsWrap.prepend(cardElement);
   closePopup(addCardModal);
-  e.target.reset();
+  formValidators[addCardFormElement.name].resetValidation();
 }
 
 /* -------------------------------------------------------------------------- */
@@ -169,11 +169,11 @@ profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
   openPopup(profileEditModal);
+  formValidators[profileEditFormElement.name].resetValidation();
 });
 
 profileAddButton.addEventListener("click", () => {
   openPopup(addCardModal);
-  formValidators[addCardFormElement.name].resetValidation();
 });
 
 profileEditCloseButton.addEventListener("click", () => {
